@@ -1,9 +1,10 @@
 const app = document.querySelector('#App');
-const p = document.createElement('p');
 
-p.style.height = '100px';
-p.style.backgroundColor = 'grey';
-p.style.cursor = 'pointer';
-app.appendChild(p);
+const template = `
+    <div>this is afreeca</div>
+    
+`;
 
-p.addEventListener('click', () => alert(1));
+app.style.height = '100px';
+app.style.backgroundColor = 'grey';
+app.innerHTML = template;
