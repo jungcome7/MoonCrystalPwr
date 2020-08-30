@@ -22,11 +22,12 @@
   },
   "homepage": "https://github.com/jungcome7/MoonCrystalPwr#readme",
   "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "webpack": "^4.43.0",
-    "webpack-cli": "^3.3.12",
     "mysql2": "^2.1.0",
-    "dotenv": "^8.2.0"
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.12"
   },
   "devDependencies": {
     "@babel/plugin-transform-runtime": "^7.11.0",
