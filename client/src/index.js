@@ -10,10 +10,10 @@ app.innerHTML = template;
 
 
 const fetchData = async () => {
-    const res = await fetch('http://localhost:3000/user')
+    const res = await fetch('http://localhost:3000/')
     console.log(res)
     const result = await res.json();
-    console.log(result)
+    console.log((result))
 }
 
-app.addEventListener('click', fetchData);
+app.addEventListener('click', fetchData); 
