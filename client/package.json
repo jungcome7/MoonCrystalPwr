@@ -2,14 +2,9 @@
   "name": "mooncrystalpwr",
   "version": "1.0.0",
   "description": "",
-  "main": "server/app.js",
+  "main": "./src/index.js",
   "scripts": {
-    "dev:server": "nodemon app.js",
-    "dev:client": "webpack-dev-server --open --config webpack.dev.js",
-    "dev": "npm-run-all --parallel dev:client dev:server",
-    "production:server": "cp .env.prod .env && pm2 start ./server/index.js",
-    "production:client": "webpack --config webpack.prod.js",
-    "production": "npm-run-all --parallel production:client production:server"
+    "dev": "webpack-dev-server --open --config webpack.dev.js"
   },
   "repository": {
     "type": "git",
@@ -22,19 +17,12 @@
   },
   "homepage": "https://github.com/jungcome7/MoonCrystalPwr#readme",
   "dependencies": {
-    "cors": "^2.8.5",
-    "dotenv": "^8.2.0",
-    "express": "^4.17.1",
-    "mysql2": "^2.1.0",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.12"
   },
   "devDependencies": {
     "@babel/plugin-transform-runtime": "^7.11.0",
     "@babel/runtime": "^7.11.0",
-    "npm-run-all": "^4.1.5",
-    "morgan": "^1.10.0",
-    "nodemon": "^2.0.4",
     "@babel/cli": "^7.10.4",
     "@babel/core": "^7.10.4",
     "@babel/preset-env": "^7.10.4",

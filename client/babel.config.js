@@ -25,9 +25,9 @@ module.exports = function (api) {
       {
         root: ['./client/src'],
         alias: {
-          imgs: './client/public/images',
-          utils: './client/utils',
-          styles: './client/src/styles',
+          imgs: './public/images',
+          utils: './utils',
+          styles: './src/styles',
         },
       },
     ],

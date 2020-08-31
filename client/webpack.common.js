@@ -3,10 +3,10 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
 
 const config = {
-  entry: './client/src/index.js',
+  entry: './src/index.js',
   output: {
     publicPath: '/',
-    path: path.resolve(__dirname, './client/dist'),
+    path: path.resolve(__dirname, './dist'),
     filename: 'build.js',
   },
   module: {
@@ -39,9 +39,9 @@ const config = {
       filename: 'style.css',
     }),
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, './client/public/index.html'),
+      template: path.resolve(__dirname, './public/index.html'),
       inject: true,
-      filename: path.resolve(__dirname, './client/dist/index.html'),
+      filename: path.resolve(__dirname, './dist/index.html'),
     }),
   ],
 };
