@@ -1,4 +1,5 @@
 import template from './template';
+import './Main.scss';
 
 function Main() {
   const main = document.createElement('div');

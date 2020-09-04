@@ -1,4 +1,5 @@
 import template from './template';
+import './Header.scss';
 
 function Header() {
   const header = document.createElement('div');
