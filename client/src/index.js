@@ -1,28 +1,8 @@
-// const { SideBar } = require('./component/SideBar');
-import { SideBar } from './component/SideBar';
-import { Header } from './component/Header';
-import { Main } from './component/Main';
+import { MainPage } from './page/MainPage';
 
 const app = document.querySelector('#App');
 
-new SideBar();
-new Header();
-new Main();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+new MainPage(app);
 
 // app.innerHTML = template;
 // app.style.height = '100px';

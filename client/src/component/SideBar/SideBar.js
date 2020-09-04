@@ -2,7 +2,8 @@ import template from './template';
 import './SideBar.scss';
 
 function SideBar() {
-  document.body.innerHTML = template;
+    const sidebarContainer = document.querySelector('.sidebar-container');
+    sidebarContainer.innerHTML = template;
 }
 
 export default SideBar;
