@@ -1,6 +1,7 @@
 import template from './template';
 
-export function SideBar() {
+function SideBar() {
   document.body.innerHTML = template;
 }
 
+export default SideBar;
