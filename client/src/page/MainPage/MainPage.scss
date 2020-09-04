@@ -1,11 +1,13 @@
 .main-container {
   width: 100vw;
   display:grid;
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: 1fr 5fr;
 }
 
 .sidebar-container {
 }
 
-.main-content-container {
+.content-container {
+    padding: 0 5%;
+    display:inline-block;
 }

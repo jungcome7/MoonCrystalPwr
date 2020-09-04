@@ -1,3 +1,7 @@
-.book-card-small {
-    background-color: green;
+.book-card-small, .summary-card-small {
+    margin: 1vw 2vw;
+    width:30vw;
+    height:35vh;
+    background-color: #ccc;
+    display:inline-block;
 }
