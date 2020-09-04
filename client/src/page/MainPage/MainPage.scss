@@ -1,7 +1,11 @@
+.main-container {
+  width: 100vw;
+  display:grid;
+  grid-template-columns: 1fr 3fr;
+}
+
 .sidebar-container {
-  display: inline-block;
 }
 
 .main-content-container {
-    display: inline-block;
 }
