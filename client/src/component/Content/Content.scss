@@ -1,7 +1,4 @@
-.book-card-small, .summary-card-small {
-    margin: 1vw 2vw;
-    width:30vw;
-    height:35vh;
-    background-color: #ccc;
-    display:inline-block;
+.content-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
