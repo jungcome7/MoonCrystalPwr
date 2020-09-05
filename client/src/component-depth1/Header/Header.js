@@ -1,6 +1,6 @@
 import template from './template';
 import './Header.scss';
-import { SubCategoryTab } from './../SubCategoryTab'
+import { SubCategoryTab } from '../../component-depth2/SubCategoryTab'
 
 function Header() {
   const headerContainer = document.querySelector('.header-container');

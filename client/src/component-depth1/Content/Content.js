@@ -1,7 +1,7 @@
 import template from './template';
 import './Content.scss';
-import { BookCardSmall } from './../BookCardSmall';
-import { SummarySmall } from './../SummarySmall';
+import { BookCardSmall } from '../../component-depth2/BookCardSmall';
+import { SummarySmall } from '../../component-depth2/SummarySmall';
 
 function Content() {
   const contentContainer = document.querySelector('.content-container');

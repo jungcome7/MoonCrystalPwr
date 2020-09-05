@@ -1,6 +1,6 @@
 import template from './template';
 import './SideBar.scss';
-import { MainCategoryTab } from './../MainCategoryTab'
+import { MainCategoryTab } from '../../component-depth2/MainCategoryTab'
 
 function SideBar() {
     const sidebarContainer = document.querySelector('.sidebar-container');
