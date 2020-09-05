@@ -1,5 +1,5 @@
-const template = `
-<div class="main-category-tab">MainCategoryAll</div>
+const template = (text) => `
+  <p>${text}</p>
 `;
 
 export default template;
