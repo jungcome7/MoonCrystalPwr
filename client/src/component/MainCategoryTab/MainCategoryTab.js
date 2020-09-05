@@ -2,11 +2,11 @@ import template from './template';
 import './MainCategoryTab.scss';
 
 function MainCategoryTab(text) {
-  const maincategoryTab = document.createElement('div');
-  maincategoryTab.className = 'main-category-tab'
-  maincategoryTab.innerHTML = template(text);
+  const mainCategoryTab = document.createElement('div');
+  mainCategoryTab.className = 'main-category-tab'
+  mainCategoryTab.innerHTML = template(text);
 
-  return maincategoryTab;
+  return mainCategoryTab;
 }
 
 export default MainCategoryTab;
