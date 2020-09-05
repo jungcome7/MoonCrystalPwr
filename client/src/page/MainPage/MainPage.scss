@@ -1,13 +1,20 @@
 .main-container {
-  width: 100vw;
-  display:grid;
-  grid-template-columns: 1fr 5fr;
+  display:flex;
 }
 
 .sidebar-container {
+  display: flex;
+  flex-direction: column;
+  flex: 0.15;
 }
 
-.content-container {
-    padding: 0 5%;
-    display:inline-block;
+.main-content-container {
+  display: flex;
+  flex-direction: column;
+  flex:0.85;
 }
+
+// .content-container {
+//   padding: 0 5%;
+//   display: inline-block;
+// }
