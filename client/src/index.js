@@ -6,11 +6,6 @@ const app = document.querySelector('#App');
 
 new MainPage(app);
 
-// app.innerHTML = template;
-// app.style.height = '100px';
-// app.style.backgroundColor = 'grey';
-// app.style.cursor = 'pointer';
-
 // const fetchData = async () => {
 //   const res = await fetch('http://localhost:3000/');
 //   const result = await res.json();

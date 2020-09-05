@@ -28,9 +28,9 @@ const pool = mysql.createPool({
 
 // app.use(setHeader);
 
-const getAllUser = async (req, res, next) => {
+const getAllMainCategories = async (req, res, next) => {
   const connection = await pool.getConnection();
-  const result = await connection.query('SELECT * FROM user');
+  const result = await connection.query('SELECT * FROM main_category');
   connection.release();
   res.status(200).json(result[0]);
 };
@@ -44,7 +44,7 @@ app.use(logger('dev'));
 // };
 // app.use(cors(corsOptions));
 
-app.get('/', getAllUser);
+app.get('/', getAllMainCategories);
 
 app.listen(3000, () => {
   console.log(`server is listening on port ${3000}`);
