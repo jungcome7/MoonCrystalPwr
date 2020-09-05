@@ -1,5 +1,11 @@
+@import './../../style/definition';
+
 .book-card-small {
-    background-color: #ccc;
+    background-color: $GRAY_1;
     height: 40vh;
     margin: 3vh 2vw;
+    cursor: pointer;
+    &:hover {
+        opacity: 0.7;
+    }
 }

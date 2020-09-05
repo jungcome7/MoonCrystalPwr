@@ -1,36 +1,6 @@
-.sidebar {
-  background-color: #ccc;
-  height: 100vh;
+@import './../../style/definition';
+
+.sidebar-container {
+  background-color: $GRAY_1;
+  height:100vh;
 }
-
-.logo {
-  height: 10vh;
-  line-height: 10vh;
-  text-align: center;
-  font-weight: bold;
-}
-
-.main-category {
-    height: 80vh;
-
-    .main-category-tab {
-        height:8vh;
-        line-height: 8vh;
-        font-weight: bold;
-        padding-left: 20%;
-    }
-}
-
-.search-form {
-    height: 10vh;
-    line-height: 10vh;
-    text-align: center;
-
-    input {
-        margin: 0 auto;
-        width: 80%;
-        height: 4vh;
-    }
-}
-
-

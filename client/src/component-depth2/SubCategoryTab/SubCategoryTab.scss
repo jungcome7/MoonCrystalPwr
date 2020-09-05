@@ -1,10 +1,15 @@
+@import './../../style/definition';
+
 .sub-category-tab {
     font-size: 20px;
-    width: 15vw;
+    width: 10vw;
     text-align: center;
     height: 5vh;
     line-height: 5vh;
-    margin:0.5vh 0.5vw;
-    background-color: #ccc;
     display:inline-block;
+    cursor: pointer;
+    background-color: $GRAY_1;
+    &:hover {
+        background-color: $GRAY_2;
+    }
 }
