@@ -3,7 +3,7 @@ import './SideBar.scss';
 import { MainCategoryTab } from '../../component-depth2/MainCategoryTab'
 
 const fetchData = async () => {
-  const res = await fetch('http://localhost:3000/api/category');
+  const res = await fetch('http://localhost:3000/api/mainCategory');
   const result = await res.json();
   console.log(result)
   return result;

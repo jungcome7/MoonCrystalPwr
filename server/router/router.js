@@ -9,6 +9,14 @@ const getAllMainCategories = async (req, res, next) => {
   res.status(200).json(result[0]);
 };
 
-router.get('/category', getAllMainCategories);
+router.get('/mainCategory', getAllMainCategories);
+
+router.get('/subCategory', getAllMainCategories);
+
+router.get('/book', getAllMainCategories)
+
+router.get('/review', getAllMainCategories)
+
+router.get('/quote', getAllMainCategories)
 
 module.exports = router;
