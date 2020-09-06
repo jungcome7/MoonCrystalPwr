@@ -1,10 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const mainCategroyController = require('./../controller/main-category');
+const mainCategoryController = require('../controller/main-category-ctrl');
+const subCategoryController = require('../controller/sub-category-ctrl');
 
-router.get('/main-category', mainCategroyController.getAllMainCategories);
+router.get('/main-category', mainCategoryController.getAllMainCategories);
 
-// router.get('/sub-category', getAllMainCategories);
+router.get('/sub-category', subCategoryController.getAllSubCategories);
 
 // router.get('/book', getAllMainCategories);
 
