@@ -15,7 +15,7 @@ async function SideBar() {
     const sidebarContainer = document.querySelector('.sidebar-container');
     sidebarContainer.appendChild(new MainCategoryTab('logo'));
 
-    mainCategories.map(category => sidebarContainer.appendChild(new MainCategoryTab(category.title)));
+    mainCategories.map(category => sidebarContainer.appendChild(new MainCategoryTab(category.title, category.id)));
 }
 
 export default SideBar;

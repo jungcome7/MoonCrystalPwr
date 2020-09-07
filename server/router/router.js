@@ -10,7 +10,7 @@ router.get('/main-category', mainCategoryController.getAllMainCategories);
 
 router.get('/sub-category', subCategoryController.getAllSubCategories);
 router.get(
-  '/sub-category/:mainCategoryId',
+  '/main-category/:mainCategoryId/sub-category',
   subCategoryController.getSubCategoriesByMainCategoryId
 );
 

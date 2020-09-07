@@ -6,7 +6,7 @@ exports.getAllSubCategories = async (req, res, next) => {
 };
 
 exports.getSubCategoriesByMainCategoryId = async (req, res, next) => {
-  const mainCategoryId = req.params.mainCategoryId
+  const mainCategoryId = req.params.mainCategoryId;
   const result = await subCategory.getByMainCategoryId(mainCategoryId);
   res.status(200).json(result[0]);
 };

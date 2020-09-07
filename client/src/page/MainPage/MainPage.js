@@ -5,10 +5,11 @@ import { Header } from './../../component-depth1/Header';
 import { Content } from './../../component-depth1/Content';
 
 function MainPage(app) {
+  const store = [];
   app.innerHTML = template;
   new SideBar();
-  new Header();
-  new Content();
+  new Header(1);
+  // new Content();
 }
 
 export default MainPage;
