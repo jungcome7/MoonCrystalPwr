@@ -15,13 +15,14 @@ router.get(
 );
 
 router.get('/book', bookController.getAllBooks);
-router.get('/book/main/:mainCategoryId', bookController.getBooksByMainCategoryId);
+router.get(
+  '/book/main/:mainCategoryId',
+  bookController.getBooksByMainCategoryId
+);
 router.get('/book/sub/:subCategoryId', bookController.getBooksBySubCategoryId);
 
-router.get('/review', reviewController.getAllReviews);
-router.get('/review/:mainCategoryId', reviewController.getReviewsByMainCategoryId);
+router.get('/review/:bookId', reviewController.getReviewsByBookId);
 
-router.get('/quote', quoteController.getAllQuotes);
-router.get('/quote/:mainCategoryId', quoteController.getQuotesByMainCategoryId);
+router.get('/quote/:bookId', quoteController.getQuotesByBookId);
 
 module.exports = router;

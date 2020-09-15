@@ -1,15 +1,8 @@
 const pool = require('../db/connection');
 
-exports.getAll = async () => {
+exports.getByBookId = async (bookId) => {
   const connection = await pool.getConnection();
-  const result = await connection.query('SELECT * FROM quote');
-  connection.release();
-  return result;
-};
-
-exports.getByMainCategoryId = async (mainCategoryId) => {
-  const connection = await pool.getConnection();
-  const result = await connection.query(`SELECT * FROM quote WHERE main_category_id=${mainCategoryId}`);
+  const result = await connection.query(`SELECT * FROM quote WHERE book_id=${bookId}`);
   connection.release();
   return result;
 };
