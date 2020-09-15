@@ -1,5 +1,5 @@
-const template = (text) => `
-  <p>${text}</p>
-`;
+function template(text) {
+  return `<p>${text}</p>`;
+}
 
 export default template;

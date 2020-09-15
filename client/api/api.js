@@ -1,12 +1,14 @@
+const API_END_POINT = 3000
+
 export const getMainCategories = async () => {
-  const res = await fetch('http://localhost:3000/api/main-category');
+  const res = await fetch(`http://localhost:${API_END_POINT}/api/main-category`);
   const result = await res.json();
   return result;
 };
 
 export const getSubCategoriesByMainCategoryId = async (mainCategoryId) => {
   const res = await fetch(
-    `http://localhost:3000/api/main-category/${mainCategoryId}/sub-category`
+    `http://localhost:${API_END_POINT}/api/main-category/${mainCategoryId}/sub-category`
   );
   const result = await res.json();
   return result;
@@ -14,7 +16,7 @@ export const getSubCategoriesByMainCategoryId = async (mainCategoryId) => {
 
 export const getBooksByMainCategoryId = async (mainCategoryId) => {
   const res = await fetch(
-    `http://localhost:3000/api/book/main/${mainCategoryId}`
+    `http://localhost:${API_END_POINT}/api/book/main/${mainCategoryId}`
   );
   const result = await res.json();
   return result;
@@ -22,7 +24,7 @@ export const getBooksByMainCategoryId = async (mainCategoryId) => {
 
 export const getBooksBySubCategoryId = async (subCategoryId) => {
   const res = await fetch(
-    `http://localhost:3000/api/book/sub/${subCategoryId}`
+    `http://localhost:${API_END_POINT}/api/book/sub/${subCategoryId}`
   );
   const result = await res.json();
   return result;

@@ -8,34 +8,37 @@ import { Content } from './../../component-depth1/Content';
 function MainPage(app) {
 
   const state = {
-    mainCategoryId: 1,
+    mainCategoryId: null,
     subCategoryId: null,
   };
 
-  function onClickHandler(id) {
+  init();
+
+  function init() {
+    app.innerHTML = template;
+    new SideBar(mainTabClickHandler);
+    new Header(state, subTabClickHandler);
+    new Content(state);
+  }
+
+  function mainTabClickHandler(id) {
     setMainCategoryId(id)
-    new Header(state.mainCategoryId, onClickHandlerSub);
-    new Content(state.mainCategoryId, state.subCategoryId);
+    new Header(state, subTabClickHandler);
+    new Content(state);
   }
 
-  function onClickHandlerSub(id) {
-    setSubCategoryId(id)
-    new Content(state.mainCategoryId, state.subCategoryId);
-  }
-  
-  app.innerHTML = template;
-  new SideBar(onClickHandler);
-  new Header(state.mainCategoryId, onClickHandlerSub);
-  new Content(state.mainCategoryId, state.subCategoryId);
-
-
-  function setMainCategoryId(mainCategoryId) {
-    state.mainCategoryId = mainCategoryId
+  function setMainCategoryId(id) {
+    state.mainCategoryId = id
     state.subCategoryId = null;
   }
 
-  function setSubCategoryId(subCategoryId) {
-    state.subCategoryId = subCategoryId
+  function subTabClickHandler(id) {
+    setSubCategoryId(id)
+    new Content(state);
+  }
+  
+  function setSubCategoryId(id) {
+    state.subCategoryId = id
   }
 
 }

@@ -1,23 +1,26 @@
 import template from './template';
 import './Content.scss';
-import { BookCardSmall } from '../../component-depth2/BookCardSmall';
-import { SummarySmall } from '../../component-depth2/SummarySmall';
-import {getBooksByMainCategoryId, getBooksBySubCategoryId} from '../../../api/api'
+import { BookCard } from '../../component-depth2/BookCard';
+import {
+  getBooksByMainCategoryId,
+  getBooksBySubCategoryId,
+} from '../../../api/api';
+import { removeChildNodes } from '../../../util/util';
 
-async function Content(mainCategoryId, subCategoryId) {
+async function Content(state) {
+  const { mainCategoryId, subCategoryId } = state;
   const contentContainer = document.querySelector('.content-container');
-  
-  let books;
-  if(subCategoryId) {
-    books = await getBooksBySubCategoryId(subCategoryId)
-  } else {
-    books = await getBooksByMainCategoryId(mainCategoryId)
-  }
-  const childNodesList = [...contentContainer.childNodes];
-  childNodesList.map((node) => contentContainer.removeChild(node))
-  books.map(book => {
-    contentContainer.appendChild(new BookCardSmall(book))
-  })
+  const books = await switchDataFetching(subCategoryId, mainCategoryId);
+  removeChildNodes(contentContainer);
+  books.map((book) => contentContainer.appendChild(new BookCard(book)));
+}
+
+async function switchDataFetching(id1, id2) {
+  let result;
+  id1
+    ? (result = await getBooksBySubCategoryId(id1))
+    : (result = await getBooksByMainCategoryId(id2));
+  return result;
 }
 
 export default Content;

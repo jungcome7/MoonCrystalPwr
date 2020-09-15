@@ -2,17 +2,18 @@ import template from './template';
 import './Header.scss';
 import { SubCategoryTab } from '../../component-depth2/SubCategoryTab';
 import { getSubCategoriesByMainCategoryId } from '../../../api/api';
+import { removeChildNodes } from '../../../util/util';
 
-async function Header(mainCategoryId, onClickHandlerSub) {
+async function Header(state, subTabClickHandler) {
+  const { mainCategoryId, subCategoryId } = state;
   const headerContainer = document.querySelector('.header-container');
-  const childNodesList = [...headerContainer.childNodes];
-  childNodesList.map((node) => headerContainer.removeChild(node));
-
   const subCategories = await getSubCategoriesByMainCategoryId(mainCategoryId);
+
+  removeChildNodes(headerContainer);
 
   subCategories.map((category) => {
     headerContainer.appendChild(
-      new SubCategoryTab(category.title, category.id, onClickHandlerSub)
+      new SubCategoryTab(category, subTabClickHandler)
     );
   });
 }

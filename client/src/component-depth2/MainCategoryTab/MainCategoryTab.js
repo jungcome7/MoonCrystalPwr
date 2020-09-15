@@ -1,20 +1,14 @@
 import template from './template';
 import './MainCategoryTab.scss';
-import { Header } from '../../component-depth1/Header';
-import { setState } from './../../page/MainPage'
 
-function MainCategoryTab(text, id, onClickHandler) {
-  const state = {
-    id: id,
-  }
+function MainCategoryTab(category, mainTabClickHandler) {
+  const { id, title } = category;
 
   const mainCategoryTab = document.createElement('div');
-  mainCategoryTab.className = 'main-category-tab'
-  mainCategoryTab.innerHTML = template(text);
+  mainCategoryTab.className = 'main-category-tab';
+  mainCategoryTab.innerHTML = template(title);
 
-
-
-  mainCategoryTab.addEventListener('click', () => onClickHandler(id))
+  mainCategoryTab.addEventListener('click', () => mainTabClickHandler(id));
   return mainCategoryTab;
 }
 
