@@ -12,18 +12,14 @@ const fetchData = async (mainCategoryId) => {
 
 async function Header(mainCategoryId) {
   const headerContainer = document.querySelector('.header-container');
+  const childNodesList = [...headerContainer.childNodes];
+  childNodesList.map((node) => headerContainer.removeChild(node));
 
   const subCategories = await fetchData(mainCategoryId);
 
-  subCategories.map((category) =>
-    headerContainer.appendChild(new SubCategoryTab(category.title))
-  );
-
-  // headerContainer.appendChild(new SubCategoryTab('subCat1'));
-  // headerContainer.appendChild(new SubCategoryTab('subCat2'));
-  // headerContainer.appendChild(new SubCategoryTab('subCat3'));
-  // headerContainer.appendChild(new SubCategoryTab('subCat4'));
-  // headerContainer.appendChild(new SubCategoryTab('subCat5'));
+  subCategories.map((category) => {
+    headerContainer.appendChild(new SubCategoryTab(category.title));
+  });
 }
 
 export default Header;
