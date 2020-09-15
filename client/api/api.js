@@ -29,3 +29,19 @@ export const getBooksBySubCategoryId = async (subCategoryId) => {
   const result = await res.json();
   return result;
 };
+
+export const getReviewsByBookId = async (bookId) => {
+  const res = await fetch(
+    `http://localhost:${API_END_POINT}/api/review/${bookId}`
+  );
+  const result = await res.json();
+  return result;
+};
+
+export const getQuotesByBookId = async (bookId) => {
+  const res = await fetch(
+    `http://localhost:${API_END_POINT}/api/quote/${bookId}`
+  );
+  const result = await res.json();
+  return result;
+};
