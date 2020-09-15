@@ -20,7 +20,7 @@ async function Content(mainCategoryId) {
   childNodesList.map((node) => contentContainer.removeChild(node))
   console.log(books)
   books.map(book => {
-    contentContainer.appendChild(new BookCardSmall(book.title))
+    contentContainer.appendChild(new BookCardSmall(book))
   })
 }
 
