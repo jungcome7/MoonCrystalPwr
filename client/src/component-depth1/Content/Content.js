@@ -2,31 +2,16 @@ import template from './template';
 import './Content.scss';
 import { BookCardSmall } from '../../component-depth2/BookCardSmall';
 import { SummarySmall } from '../../component-depth2/SummarySmall';
-
-const fetchData = async (mainCategoryId) => {
-  const res = await fetch(
-    `http://localhost:3000/api/book/main/${mainCategoryId}`
-  );
-  const result = await res.json();
-  return result;
-};
-
-const fetchDataSub = async (subCategoryId) => {
-  const res = await fetch(
-    `http://localhost:3000/api/book/sub/${subCategoryId}`
-  );
-  const result = await res.json();
-  return result;
-};
+import {getBooksByMainCategoryId, getBooksBySubCategoryId} from '../../../api/api'
 
 async function Content(mainCategoryId, subCategoryId) {
   const contentContainer = document.querySelector('.content-container');
   
   let books;
   if(subCategoryId) {
-    books = await fetchDataSub(subCategoryId)
+    books = await getBooksBySubCategoryId(subCategoryId)
   } else {
-    books = await fetchData(mainCategoryId)
+    books = await getBooksByMainCategoryId(mainCategoryId)
   }
   const childNodesList = [...contentContainer.childNodes];
   childNodesList.map((node) => contentContainer.removeChild(node))

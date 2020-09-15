@@ -1,16 +1,14 @@
 import template from './template';
 import './SideBar.scss';
 import { MainCategoryTab } from '../../component-depth2/MainCategoryTab';
+import { getMainCategories } from './../../../api/api'
 
-const fetchData = async () => {
-  const res = await fetch('http://localhost:3000/api/main-category');
-  const result = await res.json();
-  return result;
-};
+
 
 async function SideBar(onClickHandler) {
 
-  const mainCategories = await fetchData();
+  const mainCategories = await getMainCategories();
+  
   const sidebarContainer = document.querySelector('.sidebar-container');
   sidebarContainer.appendChild(new MainCategoryTab('logo'));
 

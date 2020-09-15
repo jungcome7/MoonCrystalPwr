@@ -9,7 +9,7 @@ function MainPage(app) {
 
   const state = {
     mainCategoryId: 1,
-    subCategoryId: 1,
+    subCategoryId: null,
   };
 
   function onClickHandler(id) {
@@ -31,6 +31,7 @@ function MainPage(app) {
 
   function setMainCategoryId(mainCategoryId) {
     state.mainCategoryId = mainCategoryId
+    state.subCategoryId = null;
   }
 
   function setSubCategoryId(subCategoryId) {
