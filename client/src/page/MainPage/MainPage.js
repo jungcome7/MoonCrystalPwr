@@ -9,22 +9,32 @@ function MainPage(app) {
 
   const state = {
     mainCategoryId: 1,
+    subCategoryId: 1,
   };
 
   function onClickHandler(id) {
-    setState(id)
-    new Header(state.mainCategoryId);
-    new Content(state.mainCategoryId);
+    setMainCategoryId(id)
+    new Header(state.mainCategoryId, onClickHandlerSub);
+    new Content(state.mainCategoryId, state.subCategoryId);
+  }
+
+  function onClickHandlerSub(id) {
+    setSubCategoryId(id)
+    new Content(state.mainCategoryId, state.subCategoryId);
   }
   
   app.innerHTML = template;
   new SideBar(onClickHandler);
-  new Header(state.mainCategoryId);
-  new Content(state.mainCategoryId);
+  new Header(state.mainCategoryId, onClickHandlerSub);
+  new Content(state.mainCategoryId, state.subCategoryId);
 
 
-  function setState(mainCategoryId) {
+  function setMainCategoryId(mainCategoryId) {
     state.mainCategoryId = mainCategoryId
+  }
+
+  function setSubCategoryId(subCategoryId) {
+    state.subCategoryId = subCategoryId
   }
 
 }

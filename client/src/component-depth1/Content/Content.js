@@ -5,20 +5,31 @@ import { SummarySmall } from '../../component-depth2/SummarySmall';
 
 const fetchData = async (mainCategoryId) => {
   const res = await fetch(
-    `http://localhost:3000/api/book/${mainCategoryId}`
+    `http://localhost:3000/api/book/main/${mainCategoryId}`
   );
   const result = await res.json();
   return result;
 };
 
-async function Content(mainCategoryId) {
+const fetchDataSub = async (subCategoryId) => {
+  const res = await fetch(
+    `http://localhost:3000/api/book/sub/${subCategoryId}`
+  );
+  const result = await res.json();
+  return result;
+};
+
+async function Content(mainCategoryId, subCategoryId) {
   const contentContainer = document.querySelector('.content-container');
-
-  const books = await fetchData(mainCategoryId)
-
+  
+  let books;
+  if(subCategoryId) {
+    books = await fetchDataSub(subCategoryId)
+  } else {
+    books = await fetchData(mainCategoryId)
+  }
   const childNodesList = [...contentContainer.childNodes];
   childNodesList.map((node) => contentContainer.removeChild(node))
-  console.log(books)
   books.map(book => {
     contentContainer.appendChild(new BookCardSmall(book))
   })

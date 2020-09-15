@@ -10,7 +10,7 @@ const fetchData = async (mainCategoryId) => {
   return result;
 };
 
-async function Header(mainCategoryId) {
+async function Header(mainCategoryId, onClickHandlerSub) {
   const headerContainer = document.querySelector('.header-container');
   const childNodesList = [...headerContainer.childNodes];
   childNodesList.map((node) => headerContainer.removeChild(node));
@@ -18,7 +18,7 @@ async function Header(mainCategoryId) {
   const subCategories = await fetchData(mainCategoryId);
 
   subCategories.map((category) => {
-    headerContainer.appendChild(new SubCategoryTab(category.title));
+    headerContainer.appendChild(new SubCategoryTab(category.title, category.id, onClickHandlerSub));
   });
 }
 
