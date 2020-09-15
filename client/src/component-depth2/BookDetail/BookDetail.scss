@@ -1,12 +1,7 @@
 @import './../../style/definition';
 
 .book-detail {
-    background-color: $GRAY_2;
-    height: 70vh;
-    margin: 0 2vw;
-    padding: 3vh 0;
-    cursor: pointer;
-    &:hover {
-        opacity: 0.7;
-    }
+  background-color: $GRAY_2;
+  margin: 3vh 0;
+  padding: 3vh 0;
 }

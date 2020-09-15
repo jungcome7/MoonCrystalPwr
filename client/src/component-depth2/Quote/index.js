@@ -1,1 +1,1 @@
-export { default as BookDetail } from './Quote';
+export { default as Quote } from './Quote';

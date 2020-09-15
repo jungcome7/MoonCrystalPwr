@@ -1,16 +1,12 @@
 import template from './template';
 import './Quote.scss';
-import {removeChildNodes} from '../../../util/util'
 
-function Quote(review, quotes) {
-  const contentContainer = document.querySelector('.content-container');
-  const bookDetail = document.createElement('div');
-  bookDetail.className = 'book-detail';
-  bookDetail.innerHTML = template(review[0], quotes);
+function Quote(quote) {
+  const quoteElement = document.createElement('div');
+  quoteElement.className = 'quote';
+  quoteElement.innerHTML = template(quote);
 
-  removeChildNodes(contentContainer)
-  contentContainer.appendChild(bookDetail);
-  return bookDetail;
+  return quoteElement;
 }
 
 export default Quote;
