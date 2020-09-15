@@ -12,7 +12,7 @@ async function Content(state) {
   const contentContainer = document.querySelector('.content-container');
   const books = await switchDataFetching(subCategoryId, mainCategoryId);
   removeChildNodes(contentContainer);
-  books.map((book) => contentContainer.appendChild(new BookCard(book)));
+  books.map(async (book) => contentContainer.appendChild(await new BookCard(book)));
 }
 
 async function switchDataFetching(id1, id2) {

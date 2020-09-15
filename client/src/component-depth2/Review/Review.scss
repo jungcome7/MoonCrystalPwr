@@ -1,0 +1,12 @@
+@import './../../style/definition';
+
+.review {
+    background-color: white;
+    height: 10vh;
+    width: 90%;
+    margin: 1vh auto;
+    cursor: pointer;
+    &:hover {
+        opacity: 0.7;
+    }
+}

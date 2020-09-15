@@ -3,10 +3,10 @@ import './MainPage.scss';
 import { SideBar } from './../../component-depth1/SideBar';
 import { Header } from './../../component-depth1/Header';
 import { Content } from './../../component-depth1/Content';
+import { getReviewByBookId } from '../../../api/api'
 
 
-function MainPage(app) {
-
+async function MainPage(app) {
   const state = {
     mainCategoryId: null,
     subCategoryId: null,

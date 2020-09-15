@@ -21,7 +21,7 @@ router.get(
 );
 router.get('/book/sub/:subCategoryId', bookController.getBooksBySubCategoryId);
 
-router.get('/review/:bookId', reviewController.getReviewsByBookId);
+router.get('/review/:bookId', reviewController.getReviewByBookId);
 
 router.get('/quote/:bookId', quoteController.getQuotesByBookId);
 

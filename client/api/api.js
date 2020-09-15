@@ -30,7 +30,7 @@ export const getBooksBySubCategoryId = async (subCategoryId) => {
   return result;
 };
 
-export const getReviewsByBookId = async (bookId) => {
+export const getReviewByBookId = async (bookId) => {
   const res = await fetch(
     `http://localhost:${API_END_POINT}/api/review/${bookId}`
   );

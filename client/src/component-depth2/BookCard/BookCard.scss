@@ -1,11 +1,11 @@
 @import './../../style/definition';
 
-.book-card-small {
-    background-color: $GRAY_1;
-    height: 8vh;
-    margin: 3vh 2vw;
-    cursor: pointer;
-    &:hover {
-        opacity: 0.7;
-    }
+.book-card {
+  background-color: $GRAY_2;
+  height: 10vh;
+  margin: 3vh 2vw;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.7;
+  }
 }
