@@ -8,18 +8,19 @@ import { Content } from './../../component-depth1/Content';
 function MainPage(app) {
 
   const state = {
-    mainCategoryId: null,
+    mainCategoryId: 1,
   };
 
   function onClickHandler(id) {
     setState(id)
     new Header(state.mainCategoryId);
+    new Content(state.mainCategoryId);
   }
   
   app.innerHTML = template;
   new SideBar(onClickHandler);
   new Header(state.mainCategoryId);
-  // new Content();
+  new Content(state.mainCategoryId);
 
 
   function setState(mainCategoryId) {

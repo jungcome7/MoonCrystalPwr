@@ -3,12 +3,25 @@ import './Content.scss';
 import { BookCardSmall } from '../../component-depth2/BookCardSmall';
 import { SummarySmall } from '../../component-depth2/SummarySmall';
 
-function Content() {
+const fetchData = async (mainCategoryId) => {
+  const res = await fetch(
+    `http://localhost:3000/api/book/${mainCategoryId}`
+  );
+  const result = await res.json();
+  return result;
+};
+
+async function Content(mainCategoryId) {
   const contentContainer = document.querySelector('.content-container');
-  contentContainer.appendChild(new BookCardSmall('Latest'));
-  contentContainer.appendChild(new BookCardSmall('Most Popular'));
-  contentContainer.appendChild(new BookCardSmall('Now Reading'));
-  contentContainer.appendChild(new SummarySmall('Summary'));
+
+  const books = await fetchData(mainCategoryId)
+
+  const childNodesList = [...contentContainer.childNodes];
+  childNodesList.map((node) => contentContainer.removeChild(node))
+  console.log(books)
+  books.map(book => {
+    contentContainer.appendChild(new BookCardSmall(book.title))
+  })
 }
 
 export default Content;
